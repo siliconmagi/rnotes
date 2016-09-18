@@ -1,0 +1,41 @@
+npm install -g webpack webpack-dev-server
+
+cd dir
+npm install
+
+## stylus
+npm install stylus -g
+
+Basic Usage
+
+Watch and compile a stylus file from command line with
+
+stylus -w style.styl -o style.css
+
+## try making simlink stylus
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+## list globally install npm modules
+
+npm list -g --depth=0
+
+npm uninstall -g stylus
+
+## install nodejs 16.04
+
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+
+sudo apt-get install -y nodejs
+
+sudo apt-get install -y build-essential
+
+sudo npm install npm -g
+
+## check path
+
+echo $PATH
+
+## symlink nodejs to node
+
+ln -s /usr/bin/nodejs /usr/bin/node
