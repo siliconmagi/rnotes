@@ -1,3 +1,45 @@
+## install node and npm 16.04
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+# check version nvm:  https://github.com/creationix/nvm
+
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo apt-get update
+sudo apt-get install build-essential libssl-dev
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+source ~/.zshrc
+
+## uninstall nvm
+
+rm -rf ~/.nvm
+vim ~/.zshrc > remove nvm lines
+rm -rf $NVM_DIR > equivalent to above?
+source ~/.zshrc
+
+## check versions of node via nvm
+
+nvm ls-remote
+
+## install node version via nvm
+
+nvm install 6.0.0
+
+## use node version via nvm
+
+nvm use 6.0.0
+
+## check install node versions via nvm
+
+nvm ls
+
+## use default version node via nvm
+
+nvm alias default 6.0.0
+nvm use default
+
+## install webpack global
 npm install -g webpack webpack-dev-server
 
 cd dir
@@ -11,10 +53,6 @@ Basic Usage
 Watch and compile a stylus file from command line with
 
 stylus -w style.styl -o style.css
-
-## try making simlink stylus
-
-sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ## list globally install npm modules
 
@@ -38,4 +76,4 @@ echo $PATH
 
 ## symlink nodejs to node
 
-ln -s /usr/bin/nodejs /usr/bin/node
+sudo ln -s /usr/bin/nodejs /usr/bin/node
