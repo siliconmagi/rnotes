@@ -1,0 +1,30 @@
+## semantic css cdn
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" />
+
+## Semantic CDNs
+/*
+https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css
+
+https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js
+*/
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+
+## location to include semantic.min.css via rstart
+
+src > components > Html.js
+
+## Verify stylesheet loads
+
+firefox inspector > style editor
+
+## JSX classes
+
+// normal semantic class specification
+
+<i class="add to calendar icon"></i>
+
+// using semantic classes via JSX
+
+<i className="add to calendar icon"></i>

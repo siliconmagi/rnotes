@@ -1,0 +1,11 @@
+## title tag
+
+src > routes > home > index.js
+
+## location to include semantic.min.css via rstart
+
+src > components > Html.js
+
+# react-starter-kit location google analytics
+
+src > config.js

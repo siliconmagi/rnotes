@@ -39,9 +39,6 @@ nvm ls
 nvm alias default 6.0.0
 nvm use default
 
-## install webpack global
-npm install -g webpack webpack-dev-server
-
 cd dir
 npm install
 
