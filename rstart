@@ -13,6 +13,8 @@ git push origin master
 
 # import react-tap-event-plugin and execute
 # location: src > server.js
+# location: src > client.js
+
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 
