@@ -1,11 +1,43 @@
-## title tag
+## clone kriasoft
+git clone -o react-starter-kit -b master --single-branch \
+      https://github.com/kriasoft/react-starter-kit.git MyApp
 
-src > routes > home > index.js
+## install dependancies and material-ui
+npm i --save react-tap-event-plugin material-ui
 
-## location to include semantic.min.css via rstart
+# add new remote origin
+git remote add origin https://github.com/siliconmagi/rstart
 
-src > components > Html.js
+# first time git push
+git push origin master
 
-# react-starter-kit location google analytics
+# import react-tap-event-plugin and execute
+# location: src > server.js
+import injectTapEventPlugin from "react-tap-event-plugin";
+injectTapEventPlugin();
 
-src > config.js
+# import roboto font cdn
+# location: src > components > Html.js
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+
+# apply roboto font
+# location: src > components > variables.css
+--font-family-base: 'Roboto', sans-serif;
+
+# import material-ui theme and wrap it
+# location: src > components > Layout > Layout.js
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+const App = () => (
+  <MuiThemeProvider>
+    <MyAwesomeReactComponent />
+  </MuiThemeProvider>
+);
+
+# import Appbar material-ui component
+# location: src > components > Header > Header.js
+import AppBar from 'material-ui/AppBar';
+
+<AppBar
+  title="Title"
+  iconClassNameRight="muidocs-icon-navigation-expand-more"
+/>

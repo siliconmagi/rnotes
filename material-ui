@@ -1,0 +1,39 @@
+# install react-tap-event-plugin
+npm i --save react-tap-event-plugin
+
+# Install material-ui
+npm install material-ui
+
+# Inject @ start app react-tap-event-plugin
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
+# use babel-preset-stage-1
+babel-preset-stage-1
+
+# App.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyAwesomeReactComponent from './MyAwesomeReactComponent';
+
+const App = () => (
+<MuiThemeProvider>
+<MyAwesomeReactComponent />
+</MuiThemeProvider>
+);
+
+ReactDOM.render(
+<App />,
+document.getElementById('app')
+);
+
+# ReactComponent.js
+import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const MyAwesomeReactComponent = () => (
+<RaisedButton label="Default" />
+);
+
+export default MyAwesomeReactComponent;

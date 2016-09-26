@@ -1,0 +1,8 @@
+# set new remote origin
+git remote set-url origin https://github.com/siliconmagi/rstart
+
+# add new remote origin
+git remote add origin https://github.com/siliconmagi/rstart
+
+# first time git push
+git push origin master
