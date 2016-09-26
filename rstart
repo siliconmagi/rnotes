@@ -1,6 +1,6 @@
 ## clone kriasoft
 git clone -o react-starter-kit -b master --single-branch \
-      https://github.com/kriasoft/react-starter-kit.git MyApp
+      https://github.com/kriasoft/react-starter-kit.git rstart
 
 ## install dependancies and material-ui
 npm i --save react-tap-event-plugin material-ui
@@ -14,7 +14,6 @@ git push origin master
 # import react-tap-event-plugin and execute
 # location: src > server.js
 # location: src > client.js
-
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 
@@ -43,3 +42,17 @@ import AppBar from 'material-ui/AppBar';
   title="Title"
   iconClassNameRight="muidocs-icon-navigation-expand-more"
 />
+
+## troubleshooting
+
+Noob question; adding material-ui button gives me client/server mismatch error "React attempted to reuse markup in a container but the checksum was invalid"
+Nothing fancy on my test.js page, just basic drop-in of the component.
+
+Found it: need to nesting the return() code in App.js inside <MuiThemeProvider muiTheme={muiTheme}> to solve this.
+Making sure to have defined this first: const muiTheme = getMuiTheme({ userAgent: 'all' });
+
+#imports
+# location: App.js
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+const muiTheme = getMuiTheme({ userAgent: 'all' });

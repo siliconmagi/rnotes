@@ -16,8 +16,14 @@ heroku create <name>
 // destroy heroku app
 heroku destroy <name>
 
+# list apps
+heroku list
+
 ## DEPLOY
 // https://rbrain.herokuapp.com/
+
+# build
+npm run build -- --release
 
 cd build
 git init
