@@ -1,0 +1,17 @@
+# git clone kriasoft
+git clone -o react-starter-kit -b master --single-branch \
+      https://github.com/kriasoft/react-starter-kit.git rmat
+
+# git clone universal codefoundry
+git clone -o UniversalRelayBoilerplate -b master --single-branch \
+      https://github.com/codefoundries/UniversalRelayBoilerplate.git runiv
+
+# git clone dave react redux
+git clone -o react-redux-starter-kit
+ -b master --single-branch \
+      https://github.com/davezuko/react-redux-starter-kit.git rrsk
+
+# git clone react slingshot
+git clone -o react-slingshot
+ -b master --single-branch \
+      https://github.com/coryhouse/react-slingshot.git rrsg

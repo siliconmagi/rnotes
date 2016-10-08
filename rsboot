@@ -1,0 +1,7 @@
+
+# clone react-slingshot
+git clone -o react-slingshot -b master --single-branch \
+      https://github.com/coryhouse/react-slingshot.git rsboot
+
+# install preq
+npm i

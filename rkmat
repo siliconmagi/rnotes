@@ -1,15 +1,40 @@
-## clone kriasoft
+# clone kriasoft
 git clone -o react-starter-kit -b master --single-branch \
-      https://github.com/kriasoft/react-starter-kit.git rstart
+      https://github.com/kriasoft/react-starter-kit.git rkmat
 
-## install dependancies and material-ui
-npm i --save react-tap-event-plugin material-ui
+# install preq
+npm i
+
+# build
+npm run build -- --release
+cd build
+heroku destroy
+heroku create
+git init
+git add .
+git commit -m "my first commit"
+heroku git:remote -a rkmat
+git push heroku master
+
+# install material-ui (-S save dependancies required for heroku deploy)
+npm i -S material-ui react-tap-event-plugin
+
+# install stage-1 (optional)
+npm i -D babel-preset-stage-1
+
+# activate stage-1 (optional)
+# location: package.json
+# location: webpack.config.js
+
+{
+  "presets": ["stage-1"]
+
 
 # add new remote origin
-git remote add origin https://github.com/siliconmagi/rstart
+git remote add origin https://github.com/siliconmagi/rkmat
 
 # first time git push
-git push origin master
+git push -u origin master
 
 # import react-tap-event-plugin and execute
 # location: src > server.js
@@ -25,34 +50,33 @@ injectTapEventPlugin();
 # location: src > components > variables.css
 --font-family-base: 'Roboto', sans-serif;
 
+# create material ui Appbar with state
+# location: src > components > Appbar
+Appbar.js
+package.json
+
 # import material-ui theme and wrap it
 # location: src > components > Layout > Layout.js
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-const App = () => (
-  <MuiThemeProvider>
-    <MyAwesomeReactComponent />
-  </MuiThemeProvider>
-);
 
-# import Appbar material-ui component
-# location: src > components > Header > Header.js
-import AppBar from 'material-ui/AppBar';
-
-<AppBar
-  title="Title"
-  iconClassNameRight="muidocs-icon-navigation-expand-more"
-/>
+function Layout({ children }) {
+  return (
+    <MuiThemeProvider muiTheme={getMuiTheme({userAgent: navigator.userAgent})}>
+    <div>
+      <Appbar />
+      <Header />
+      {React.Children.only(children)}
+      <Feedback />
+      <Footer />
+    </div>
+    </MuiThemeProvider>
+  );
+}
 
 ## troubleshooting
-
 Noob question; adding material-ui button gives me client/server mismatch error "React attempted to reuse markup in a container but the checksum was invalid"
 Nothing fancy on my test.js page, just basic drop-in of the component.
 
 Found it: need to nesting the return() code in App.js inside <MuiThemeProvider muiTheme={muiTheme}> to solve this.
 Making sure to have defined this first: const muiTheme = getMuiTheme({ userAgent: 'all' });
-
-#imports
-# location: App.js
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-const muiTheme = getMuiTheme({ userAgent: 'all' });

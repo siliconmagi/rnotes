@@ -1,0 +1,26 @@
+# clone kriasoft
+git clone -o UniversalRelayBoilerplate -b master --single-branch \
+      https://github.com/siliconmagi/UniversalRelayBoilerplate runiv
+
+# npm install
+npm i
+
+# setup local
+npm run setup-local
+
+# run dev
+npm run dev
+
+# open app
+http://localhost:4444
+
+# heroku
+
+cd build
+git init
+git add .
+git commit -m "my first commit"
+heroku create
+git remote -v
+heroku git:remote -a rbrain
+git push heroku master

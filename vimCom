@@ -1,0 +1,30 @@
+# copy line normal mode
+yy
+
+# paste line normal mode
+p
+
+# visual mode
+v
+
+# delete
+d
+
+# undo/redo
+u Ctrl + R
+
+
+# jump forward/backward by sentence/paragraph
+() {}
+
+# jump forward/backward by line
+j k
+
+# jump top/middle/bottom screen
+H M L
+
+# jump to beginning/end of file or line number
+gg G 50G
+
+# jump to start/end line
+0 $

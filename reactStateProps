@@ -1,0 +1,10 @@
+
+# state vs props
+
+State gets used only if component has an internal value that only affects that component
+
+Any value that affects multiple components should use props
+
+# troubleshooting
+console.log(this.props)
+console.log(this.state)

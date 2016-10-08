@@ -1,0 +1,5 @@
+# save package.json in dependancies
+npm i -S material-ui
+
+# save package.json in devdependancies
+npm i -D

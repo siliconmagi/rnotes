@@ -1,0 +1,64 @@
+# git clone kriasoft
+git clone -o react-starter-kit -b master --single-branch \
+      https://github.com/kriasoft/react-starter-kit.git rkboot
+
+# install
+npm i
+npm start
+
+# build
+npm run build -- --release
+
+# instal react-bootstrap
+
+npm install react-bootstrap --save
+
+# install cdn
+# location: src > components > Html.js
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+
+# remove navigation
+# location: src > components > Navigation
+# location: src > components > Header > Header.js
+import Navigation from '../Navigation';
+import Link from '../Link';
+import logoUrl from './logo-small.png';
+<Navigation className={s.nav} />
+<Link className={s.brand} to="/">
+<img src={logoUrl} width="38" height="38" alt="React" />
+<span className={s.brandTxt}>Your Company</span>
+</Link>
+
+# increase padding header container
+# location: src > components > Header > Header.css > .container
+  padding: 51px 0;
+
+# navigation bar
+# location: src > components > Header
+import { Navbar } from 'react-bootstrap';
+<Navbar inverse fixedTop>
+  <Navbar.Header>
+    <Navbar.Brand>
+      <a href="/">Silicon Magi</a>
+    </Navbar.Brand>
+    <Navbar.Toggle />
+  </Navbar.Header>
+  <Navbar.Collapse>
+    <Nav pullRight>
+      <NavItem eventKey={1} href="/about">About</NavItem>
+      <NavItem eventKey={2} href="/contact">Contact</NavItem>
+      <NavItem eventKey={3} href="/login">Login</NavItem>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+
+# build and deploy
+npm run build -- --release
+cd build
+heroku destroy rkboot
+heroku create rkboot
+git init
+git add -A
+git commit -m "bootstrap"
+heroku git:remote -a rkboot
+git push heroku master
